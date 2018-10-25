@@ -5,8 +5,13 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[index show new create edit update]
 
+<<<<<<< HEAD
   namespace :admin do
     resources :stats, only: [:index]
+=======
+  scope '/admin' do
+    resources :stats, only: [:index, :new]
+>>>>>>> d0aa0b47e611d7fac315e534e8f903521d5cf22c
   end
 
   root 'posts#index'
